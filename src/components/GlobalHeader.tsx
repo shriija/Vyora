@@ -3,39 +3,15 @@ import { Logo } from './Logo';
 
 export const GlobalHeader: React.FC = () => {
   return (
-    <header 
-      style={{
-        backgroundColor: '#FFFFFF',
-        borderBottom: '2px solid var(--border-color)',
-        padding: '12px var(--space-lg)',
-        position: 'sticky',
-        top: 0,
-        zIndex: 100
-      }}
-    >
-      <div 
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          maxWidth: '1000px',
-          margin: '0 auto'
-        }}
-      >
+    <header className="global-header">
+      <div className="global-header-container">
         {/* Left Column: Serif Logo */}
         <a href="#" style={{ textDecoration: 'none' }}>
           <Logo />
         </a>
 
         {/* Center: Navigation Links in Caps */}
-        <nav 
-          style={{
-            display: 'flex',
-            gap: '24px',
-            alignItems: 'center'
-          }}
-          aria-label="Main Navigation"
-        >
+        <nav className="header-nav" aria-label="Main Navigation">
           {['work', 'process', 'mission', 'team'].map((link) => (
             <a
               key={link}
@@ -59,14 +35,10 @@ export const GlobalHeader: React.FC = () => {
         </nav>
 
         {/* Right Column: Pink Pill Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <a 
             href="mailto:teamvyora@gmail.com"
-            className="plm-btn-primary"
-            style={{
-              padding: '6px 16px',
-              fontSize: '0.75rem'
-            }}
+            className="plm-btn-primary header-cta-button"
           >
             Join The Club
           </a>

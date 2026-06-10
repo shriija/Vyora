@@ -20,7 +20,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '' }) => {
         style={{ 
           fontFamily: "var(--font-display)", 
           fontWeight: 'normal', 
-          fontSize: '1.9rem', 
+          fontSize: 'clamp(1.4rem, 4.5vw, 1.9rem)', 
           color: 'var(--text-primary)',
           letterSpacing: '-0.03em',
           textTransform: 'lowercase'
@@ -30,8 +30,8 @@ export const Logo: React.FC<LogoProps> = ({ className = '' }) => {
       </span>
       <span 
         style={{
-          width: '6px',
-          height: '6px',
+          width: 'clamp(4.5px, 1.1vw, 6px)',
+          height: 'clamp(4.5px, 1.1vw, 6px)',
           backgroundColor: 'var(--brand-pink)',
           borderRadius: '50%',
           display: 'inline-block'

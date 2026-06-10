@@ -497,5 +497,49 @@ body {
   }
 }
 
+/* Responsive Global Header */
+.global-header {
+  background-color: #FFFFFF;
+  border-bottom: 2px solid var(--border-color);
+  padding: 10px var(--space-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.global-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-nav {
+  display: none;
+}
+
+.header-cta-button {
+  padding: 5px 12px;
+  font-size: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .global-header {
+    padding: 12px var(--space-lg);
+  }
+  
+  .header-nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+  
+  .header-cta-button {
+    padding: 6px 16px;
+    font-size: 0.75rem;
+  }
+}
+
 
 
