@@ -46,35 +46,12 @@ export const BeforeAfter: React.FC = () => {
         </div>
 
         {/* Spiral Notebook Container with PLM Styles */}
-        <div 
-          style={{
-            backgroundColor: 'var(--paper-color)',
-            border: '2.5px solid var(--border-color)',
-            borderRadius: '12px',
-            boxShadow: '6px 6px 0px var(--border-color)',
-            position: 'relative',
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            minHeight: '450px',
-            overflow: 'hidden',
-            maxWidth: '920px',
-            margin: '0 auto'
-          }}
-        >
+        <div className="notebook-container">
           {/* Spiral binder wire overlay */}
           <div className="notebook-spiral" />
 
           {/* Left Page (Legacy Outdated Site) - Yellowish grid */}
-          <div 
-            style={{
-              padding: 'var(--space-xl) var(--space-lg)',
-              backgroundColor: '#FAF8F4',
-              backgroundImage: 'linear-gradient(rgba(0,0,0,0.03) 1.5px, transparent 1.5px)',
-              backgroundSize: '100% 28px',
-              borderRight: '1.5px solid rgba(0,0,0,0.1)',
-              position: 'relative'
-            }}
-          >
+          <div className="notebook-left-page">
             <div style={{ position: 'absolute', top: 0, bottom: 0, left: '35px', width: '1.5px', backgroundColor: 'rgba(239, 68, 68, 0.15)' }} />
 
             <div style={{ paddingLeft: '30px' }}>
@@ -139,18 +116,7 @@ export const BeforeAfter: React.FC = () => {
           </div>
 
           {/* Right Page (The Redesign) - Clean blueprint graph grid */}
-          <div 
-            style={{
-              padding: 'var(--space-xl) var(--space-lg)',
-              backgroundColor: '#FFFFFF',
-              backgroundImage: `
-                linear-gradient(rgba(28, 35, 51, 0.03) 1.5px, transparent 1.5px),
-                linear-gradient(90deg, rgba(28, 35, 51, 0.03) 1.5px, transparent 1.5px)
-              `,
-              backgroundSize: '24px 24px',
-              paddingLeft: 'var(--space-xl)'
-            }}
-          >
+          <div className="notebook-right-page">
             <span 
               style={{ 
                 fontFamily: 'var(--font-mono)', 

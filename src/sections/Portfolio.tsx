@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface Project {
   id: number;
@@ -14,6 +14,17 @@ interface Project {
 
 export const Portfolio: React.FC = () => {
   const [hoveredFolder, setHoveredFolder] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.folder-container-item')) {
+        setHoveredFolder(null);
+      }
+    };
+    document.addEventListener('click', handleOutsideClick);
+    return () => document.removeEventListener('click', handleOutsideClick);
+  }, []);
 
   const projects: Project[] = [
     {
@@ -137,9 +148,17 @@ export const Portfolio: React.FC = () => {
             return (
               <div
                 key={project.id}
+                className="folder-container-item"
                 onMouseEnter={() => setHoveredFolder(project.id)}
                 onMouseLeave={() => setHoveredFolder(null)}
-                onClick={() => window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (hoveredFolder === project.id) {
+                    window.open(project.liveUrl, '_blank', 'noopener,noreferrer');
+                  } else {
+                    setHoveredFolder(project.id);
+                  }
+                }}
                 style={{
                   width: '175px',
                   height: '135px',
