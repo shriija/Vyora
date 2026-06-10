@@ -1,0 +1,175 @@
+/* Premium Editorial Grid Styles */
+
+.headerGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-md);
+  align-items: center;
+  padding: var(--space-sm) 0;
+}
+
+.logoCol {
+  grid-column: span 4;
+}
+
+.navCol {
+  grid-column: span 5;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+}
+
+.actionCol {
+  grid-column: span 3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.sectionGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-lg);
+  padding: var(--space-2xl) 0;
+}
+
+.dividerLine {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 0;
+}
+
+/* Vertical layout grid lines to establish structural divisions */
+.leftBorderedCol {
+  border-left: 1px solid var(--border-color);
+  padding-left: var(--space-lg);
+}
+
+.rightBorderedCol {
+  border-right: 1px solid var(--border-color);
+  padding-right: var(--space-lg);
+}
+
+/* Portfolio grid definitions */
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0; /* Flush borders */
+  border: 1px solid var(--border-color);
+}
+
+.portfolioItem {
+  grid-column: span 6;
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--space-xl);
+}
+
+.portfolioItem:nth-child(even) {
+  border-left: 1px solid var(--border-color);
+}
+
+.portfolioItem:last-child,
+.portfolioItem:nth-last-child(2):not(:nth-child(even)) {
+  border-bottom: none;
+}
+
+/* Timeline grid definitions */
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  border-top: 1px solid var(--border-color);
+  padding-top: var(--space-xl);
+}
+
+.timelineItem {
+  border-right: 1px solid var(--border-color);
+  padding-right: var(--space-md);
+}
+
+.timelineItem:last-child {
+  border-right: none;
+}
+
+/* Team Grid definitions */
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: 1px solid var(--border-color);
+}
+
+.teamMember {
+  border-right: 1px solid var(--border-color);
+  padding: var(--space-lg) var(--space-md);
+  text-align: left;
+}
+
+.teamMember:last-child {
+  border-right: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .headerGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    text-align: center;
+    padding: var(--space-md) 0;
+  }
+  
+  .logoCol, .navCol, .actionCol {
+    grid-column: span 12;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .portfolioItem {
+    grid-column: span 12 !important;
+    border-left: none !important;
+    border-bottom: 1px solid var(--border-color) !important;
+  }
+  
+  .portfolioItem:last-child {
+    border-bottom: none !important;
+  }
+  
+  .timelineGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .timelineItem {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+    padding-bottom: var(--space-lg);
+  }
+  
+  .timelineItem:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .teamMember {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .teamMember:last-child {
+    border-bottom: none;
+  }
+  
+  .leftBorderedCol, .rightBorderedCol {
+    border-left: none;
+    border-right: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

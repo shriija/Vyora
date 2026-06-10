@@ -1,0 +1,446 @@
+/* Pretty Little Marketer (PLM) Theme Design Tokens */
+:root {
+  /* Colors */
+  --bg-outer: #B5C899;           /* Soft olive green outer canvas */
+  --bg-primary: #FFFFFF;         /* White central sheet */
+  
+  /* Brand Accents */
+  --brand-pink: #FFC5D3;         /* Highlighter Pink */
+  --brand-blue: #A9D3E6;         /* Soft Blueprint Blue */
+  --brand-green: #B5C899;        /* Soft Sage Green */
+  --brand-yellow: #FDE047;       /* Ticker Strip Yellow */
+  --text-primary: #1C2333;       /* Bold Dark Charcoal */
+  --text-secondary: #5C6270;     /* Slate Muted Gray */
+  
+  --border-color: #1C2333;       /* Crisp 2px border outline */
+  
+  /* Fonts */
+  --font-display: 'DM Serif Display', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-script: 'Caveat', cursive;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3.5rem;   /* 56px */
+  --space-2xl: 6rem;    /* 96px */
+}
+
+/* Base resets & Outer background */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-outer);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  padding: 20px 0; /* Margin around the central wrap */
+}
+
+/* Central Page Wrap Container */
+#page-wrap {
+  width: 92%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--bg-primary);
+  border: 2.5px solid var(--border-color);
+  border-radius: 1px; /* Sharp corners like a real paper sheet */
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fine Blueprint Graph Paper Grid Background */
+.graph-grid {
+  background-image: 
+    linear-gradient(rgba(28, 35, 51, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28, 35, 51, 0.04) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Dot Grid Pattern */
+.dot-grid {
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 16px 16px;
+  background-color: #FFFFFF;
+}
+
+/* Pink Pen Highlighter Highlight */
+.pink-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.pink-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: -4px;
+  right: -4px;
+  height: 40%;
+  background-color: var(--brand-pink);
+  z-index: -1;
+  transform: skewX(-5deg);
+  border-radius: 2px;
+}
+
+/* Tilted blue marker sticker tag */
+.blue-marker-tag {
+  background-color: var(--brand-blue);
+  border: 1.5px solid var(--border-color);
+  padding: 4px 12px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  display: inline-block;
+  transform: rotate(-2.5deg);
+  box-shadow: 2px 2px 0px var(--border-color);
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.float-doodle {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Pill buttons matching the PLM style */
+.plm-btn-primary {
+  background-color: var(--brand-pink);
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.plm-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+.plm-btn-primary::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #FFF;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+}
+
+.plm-btn-secondary {
+  background-color: #FFFFFF;
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.plm-btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Carousel/Grid layout helpers */
+.container {
+  width: 100%;
+  padding: 0 var(--space-lg);
+}
+
+/* Horizontal Ticker Banner */
+.ticker-banner {
+  background-color: var(--brand-yellow);
+  border-top: 2.5px solid var(--border-color);
+  border-bottom: 2.5px solid var(--border-color);
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  user-select: none;
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker-slide 120s linear infinite;
+  will-change: transform;
+}
+
+.ticker-content {
+  flex-shrink: 0;
+}
+
+@keyframes ticker-slide {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* Notebook Spiral Binding */
+.notebook-spiral {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  z-index: 10;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 12px 12px, #E2E8F0 3px, transparent 4px),
+    radial-gradient(circle at 12px 12px, var(--border-color) 5px, transparent 6px);
+  background-size: 24px 24px;
+}
+
+/* Responsive Team Section */
+.team-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 10px var(--space-lg) 20px var(--space-lg);
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.team-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.team-card {
+  background-color: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  padding: var(--space-md) var(--space-md) var(--space-lg) var(--space-md);
+  width: 170px;
+  flex-shrink: 0;
+  box-shadow: 4px 4px 0px var(--border-color);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0px var(--border-color);
+}
+
+@media (min-width: 1024px) {
+  .team-list {
+    justify-content: center;
+    padding: 10px 0 20px 0;
+  }
+}
+
+/* Scrapbook Mission Section */
+.scrapbook-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+/* Mobile-first list layout */
+.scrapbook-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.scrapbook-card {
+  background-color: #FFFFFF;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: 4px 4px 0px var(--border-color);
+  position: relative;
+}
+
+.dictionary-card {
+  background-color: #FCFBF9;
+  border: 2.5px solid var(--border-color);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  box-shadow: 6px 6px 0px var(--border-color);
+  position: relative;
+  text-align: left;
+}
+
+.tape-strip {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  height: 20px;
+  width: 70px;
+  background-color: rgba(250, 240, 215, 0.7);
+  border: 1px dashed rgba(0, 0, 0, 0.1);
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+
+.tape-strip.blue {
+  background-color: rgba(186, 215, 233, 0.55);
+}
+
+.tape-strip.pink {
+  background-color: rgba(244, 219, 216, 0.55);
+}
+
+.tape-strip.green {
+  background-color: rgba(212, 237, 218, 0.55);
+}
+
+.tape-strip.yellow {
+  background-color: rgba(255, 243, 205, 0.55);
+}
+
+/* Desktop absolute scatter layout */
+@media (min-width: 1024px) {
+  .scrapbook-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 40px 30px;
+    align-items: start;
+    height: auto;
+    position: relative;
+    padding: var(--space-lg) 0;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .scrapbook-card {
+    position: relative;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
+  }
+  
+  .dictionary-card {
+    position: relative;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease;
+  }
+  
+  /* Vision Card */
+  .card-vision {
+    grid-column: 1;
+    grid-row: 1;
+    transform: rotate(-2.5deg) translateY(15px);
+  }
+  
+  /* Aura Card */
+  .card-aura {
+    grid-column: 3;
+    grid-row: 1;
+    transform: rotate(2deg) translateY(20px);
+  }
+  
+  /* Dictionary Card (Center) */
+  .dictionary-card {
+    grid-column: 2;
+    grid-row: 1;
+    transform: rotate(-1deg) translateY(5px);
+    width: 100%;
+    max-width: 320px;
+    z-index: 10;
+  }
+  
+  /* Engineering Card */
+  .card-engineering {
+    grid-column: 1;
+    grid-row: 2;
+    transform: rotate(1.5deg) translateY(-10px);
+  }
+  
+  /* Relationships Card */
+  .card-relationships {
+    grid-column: 2;
+    grid-row: 2;
+    transform: rotate(2.5deg) translateY(-5px);
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  /* Community Card */
+  .card-community {
+    grid-column: 3;
+    grid-row: 2;
+    transform: rotate(-2deg) translateY(-15px);
+  }
+
+  /* Hover states that preserve the card's rotation while zooming & lifting */
+  .card-vision:hover {
+    transform: rotate(-2.5deg) translateY(5px) scale(1.03) !important;
+    box-shadow: 6px 6px 0px var(--border-color);
+  }
+  
+  .card-aura:hover {
+    transform: rotate(2deg) translateY(10px) scale(1.03) !important;
+    box-shadow: 6px 6px 0px var(--border-color);
+  }
+  
+  .card-engineering:hover {
+    transform: rotate(1.5deg) translateY(-20px) scale(1.03) !important;
+    box-shadow: 6px 6px 0px var(--border-color);
+  }
+  
+  .card-relationships:hover {
+    transform: rotate(2.5deg) translateY(-15px) scale(1.03) !important;
+    box-shadow: 6px 6px 0px var(--border-color);
+  }
+  
+  .card-community:hover {
+    transform: rotate(-2deg) translateY(-25px) scale(1.03) !important;
+    box-shadow: 6px 6px 0px var(--border-color);
+  }
+
+  .dictionary-card:hover {
+    transform: rotate(-1deg) translateY(-5px) scale(1.02);
+    box-shadow: 8px 8px 0px var(--border-color);
+  }
+}
+
+
+
