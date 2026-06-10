@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Vyora
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vyora is a boutique digital agency dedicated to designing and building premium websites for local businesses and neighborhood storefronts. 
 
-Currently, two official plugins are available:
+## Design Philosophy
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+We believe that local favorites--cafes, salons, bakeries, and clinics--deserve the same level of digital craftsmanship and care as global brands. Our design direction is clean, warm, and highly-personalized, built on a custom scrapbook-inspired layout.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Custom Scrapbook Grid: A responsive, grid-based presentation of why Vyora exists.
+- Interactive Portfolio Showcase: A brutalist OS-folder style showcase that displays site mockups and details on hover.
+- Lined Notebook Showcase: Side-by-side comparison grids framed with a notebook center spiral binding.
+- Fast and Performant: Hand-coded from scratch using modern React, TypeScript, and clean CSS, with no page builders, heavy frameworks, or bloated plugins.
+- Search Engine Optimized: Proper semantic HTML structuring, meta tags, preconnected assets, and fast loading performance to boost local search visibility.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19
+- TypeScript
+- Vite
+- Custom CSS
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Local Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+To run the development server locally, follow these steps:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+3. Build the production application:
+   ```bash
+   npm run build
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. Preview the production build:
+   ```bash
+   npm run preview
+   ```
+
+## Contact
+
+For inquiries or free section redesign requests, contact us at teamvyora@gmail.com.
