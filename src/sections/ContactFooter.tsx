@@ -4,7 +4,7 @@ export const ContactFooter: React.FC = () => {
   const [copied, setCopied] = useState<boolean>(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('teamvyora@gmail.com');
+    navigator.clipboard.writeText('heyvyora@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -118,7 +118,7 @@ export const ContactFooter: React.FC = () => {
             {/* Email link with underline */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
               <a 
-                href="mailto:teamvyora@gmail.com?subject=Coffee and Web Design Conversation"
+                href="mailto:heyvyora@gmail.com?subject=Coffee and Web Design Conversation"
                 style={{
                   fontFamily: 'var(--font-display)',
                   fontSize: 'clamp(1.5rem, 4.5vw, 2.5rem)',
@@ -130,7 +130,7 @@ export const ContactFooter: React.FC = () => {
                   textTransform: 'lowercase'
                 }}
               >
-                teamvyora@gmail.com
+                heyvyora@gmail.com
               </a>
 
               {/* Copy email button badge */}
@@ -178,7 +178,7 @@ export const ContactFooter: React.FC = () => {
           <div style={{ display: 'flex', gap: '20px' }}>
             <span>INSTAGRAM: Coming Soon</span>
             <a 
-              href="mailto:teamvyora@gmail.com" 
+              href="mailto:heyvyora@gmail.com" 
               style={{ textDecoration: 'underline', color: 'var(--text-primary)' }}
             >
               EMAIL US

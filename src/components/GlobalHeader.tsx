@@ -37,7 +37,7 @@ export const GlobalHeader: React.FC = () => {
         {/* Right Column: Pink Pill Button */}
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <a 
-            href="mailto:teamvyora@gmail.com"
+            href="mailto:heyvyora@gmail.com"
             className="plm-btn-primary header-cta-button"
           >
             Join The Club

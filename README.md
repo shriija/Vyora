@@ -47,4 +47,4 @@ To run the development server locally, follow these steps:
 
 ## Contact
 
-For inquiries or free section redesign requests, contact us at teamvyora@gmail.com.
+For inquiries or free section redesign requests, contact us at heyvyora@gmail.com.

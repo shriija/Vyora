@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
         {/* Pill buttons */}
         <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <a 
-            href="mailto:teamvyora@gmail.com?subject=Free Redesign Request"
+            href="mailto:heyvyora@gmail.com?subject=Free Redesign Request"
             className="plm-btn-primary"
             style={{ fontSize: '0.85rem', padding: '10px 24px' }}
           >
